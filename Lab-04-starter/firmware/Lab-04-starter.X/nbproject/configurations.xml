@@ -1542,7 +1542,7 @@
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="C:/Users/Vito/Documents/G2/CISC-211-Lab-04/Lab-04-starter/firmware/Lab-04-starter.X/debug/sam_e51_cnano/Lab-04-starter_ptg"/>
+                  value="D:/MBOs_work/reference_apps/apps/sam_e51_cnano/same51n_getting_started/firmware/sam_e51_cnano.X/debug/sam_e51_cnano/sam_e51_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
