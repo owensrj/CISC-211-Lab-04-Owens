@@ -67,7 +67,7 @@ asmFunc:
     
 /*** STUDENTS: Place your code BELOW this line!!! **************/
 
-    /* Initialize r4, r5, and r6 to point to address of variables eat_out, stay_in, and eat_ice_cream */
+    /* Initialize r4, r5, r6, and r10 to point to address of variables eat_out, stay_in, eat_ice_cream and we_have_a_problem*/
     LDR r4, =eat_out
     LDR r5, =stay_in
     LDR r6, =eat_ice_cream
@@ -100,7 +100,7 @@ asmFunc:
     LDR r2, =balance
     LDR r3, [r2]
     ADDS r3, r0  /* tmpBalance = balance (r3) + transaction amount (r0) */
-    BVS set_we_have_a_problem  /* Check for overflow */
+    BVS set_we_have_a_problem  /* Check for overflow and update using the Branch if oVerflow Set operation*/
     STR r3, [r2] /* Update the balance variable */
     
     /* Update the transaction variable */
