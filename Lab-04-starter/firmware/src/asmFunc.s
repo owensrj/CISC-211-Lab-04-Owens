@@ -92,15 +92,15 @@ asmFunc:
 
     /* Check transaction amount in r0 for being within the acceptable range [-1000, 1000] */
     CMP r0, r9
-    BLT update_we_have_a_problem
+    BLT set_we_have_a_problem
     CMP r0, r8
-    BGT update_we_have_a_problem
+    BGT set_we_have_a_problem
 
     /* Load current balance to r3 (with r2 as a pointer) and calculate temporary balance */
     LDR r2, =balance
     LDR r3, [r2]
     ADDS r3, r0  /* tmpBalance = balance (r3) + transaction amount (r0) */
-    BVS update_we_have_a_problem  /* Check for overflow */
+    BVS set_we_have_a_problem  /* Check for overflow */
     STR r3, [r2] /* Update the balance variable */
     
     /* Update the transaction variable */
@@ -133,7 +133,7 @@ update_r0:
     MOV r0, r3
     B done
 
-update_we_have_a_problem:
+set_we_have_a_problem:
     /* If program runs to here, Transaction is not within acceptable range or an overflow occurred */
     LDR r10, =we_have_a_problem
     MOV r7, 1
